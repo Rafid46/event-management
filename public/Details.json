@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1",
+    "name": "Gaming tournaments",
+    "description": "Immerse yourself in thrilling gaming competitions at our convention! We provide a top-notch environment for tournaments where players can showcase their skills and compete for exciting prizes. Whether you're into video games, tabletop games, or eSports, there's a tournament for everyone.",
+    "price": "200$",
+    "image": "https://i.ibb.co/L1FKwg0/tournaments.jpg"
+  },
+  {
+    "id": "2",
+    "name": "Expo hall",
+    "description": "Step into the heart of gaming innovation! Our Expo Hall is a gamer's paradise, featuring the latest games, cutting-edge hardware, and engaging demos. Explore a diverse range of exhibits from game developers, hardware manufacturers, and more, all under one roof.",
+    "price": "200$",
+    "image": "https://i.ibb.co/dtKfDdd/expo.jpg"
+  },
+  {
+    "id": "3",
+    "name": "Cosplay contest",
+    "description": " Unleash your inner hero! Join our cosplay contest and become your favorite gaming character. Show off your creativity, craftsmanship, and passion for gaming while vying for fantastic prizes and celebrating the gaming community's unique artistry.",
+    "price": "200$",
+    "image": "https://i.ibb.co/VxznS56/cosplay.jpg"
+  },
+  {
+    "id": "4",
+    "name": "Merchandise Vendor",
+    "description": "Dive into a treasure trove of gaming merchandise! Our convention hosts a vibrant marketplace where you can discover exclusive clothing, accessories, collectibles, and artwork inspired by your favorite games. Find one-of-a-kind items to take home as mementos.",
+    "price": "200$",
+    "image": "https://i.ibb.co/zs4nQt4/merchandise1.jpg"
+  },
+  {
+    "id": "5",
+    "name": "Streaming zone",
+    "description": "Level up your content creation game! In our dedicated streaming zone, you can connect with fellow creators and engage with your audience in real-time. Stream your gameplay, collaborate, and be part of the live gaming community, all in a supportive environment.",
+    "price": "200$",
+    "image": "https://i.ibb.co/qJYs5ss/streaming.jpg"
+  },
+  {
+    "id": "6",
+    "name": "Food and bevarage services",
+    "description": "Satisfy your gaming appetite with us! We understand that gaming can work up an appetite, so we provide a variety of food and beverage options right at the convention. Enjoy delicious meals and refreshments to keep your energy high throughout the event.",
+    "price": "200$",
+    "image": "https://i.ibb.co/HhSCMZy/food.jpg"
+  }
+]
