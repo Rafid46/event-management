@@ -1,6 +1,18 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 const NavBar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleSignOut = () => {
+    logOut()
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
   const links = (
     <>
       <li className="text-2xl font-light text-[#00FFE1] mr-20">
@@ -12,12 +24,17 @@ const NavBar = () => {
       <li className="text-2xl font-light  text-[#00FFE1] mr-20">
         <NavLink to="/about">A B O U T</NavLink>
       </li>
-      <li className="text-2xl font-light  text-[#00FFE1] mr-20">
-        <NavLink to="/Events">E S P O R T S</NavLink>
-      </li>
-      <li className="text-2xl font-light  text-[#00FFE1] mr-20">
-        <NavLink to="/bookings">P U R C H A S E</NavLink>
-      </li>
+
+      {user && (
+        <>
+          <li className="text-2xl font-light  text-[#00FFE1] mr-20">
+            <NavLink to="/esports">E S P O R T S</NavLink>
+          </li>
+          <li className="text-2xl font-light  text-[#00FFE1] mr-20">
+            <NavLink to="/bookings">P U R C H A S E</NavLink>
+          </li>
+        </>
+      )}
     </>
   );
   return (
@@ -54,11 +71,25 @@ const NavBar = () => {
           <ul className="menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar">
-          <Link to="/login">
-            <button className="btn rounded-none w-[130px] hover:text-[#00FFE1] ">
-              L o g i n
+          <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+            <div className="w-8 mr-2 rounded-full">
+              <img src="" />
+            </div>
+          </label>
+          {user ? (
+            <button
+              onClick={handleSignOut}
+              className="btn rounded-none w-[130px] hover:text-[#00FFE1]"
+            >
+              L O G O U T
             </button>
-          </Link>
+          ) : (
+            <Link to="/login">
+              <button className="btn rounded-none w-[130px] hover:text-[#00FFE1]">
+                L o g i n
+              </button>
+            </Link>
+          )}
         </div>
       </div>
     </div>

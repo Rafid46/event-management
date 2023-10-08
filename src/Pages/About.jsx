@@ -1,5 +1,12 @@
+import NavBar from "./Shared/Navbar/NavBar";
+
 const About = () => {
-  return <div>about</div>;
+  return (
+    <div>
+      <NavBar></NavBar>
+      about
+    </div>
+  );
 };
 
 export default About;

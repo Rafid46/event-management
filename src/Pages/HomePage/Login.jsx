@@ -1,6 +1,12 @@
+/* eslint-disable no-unused-vars */
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
+import NavBar from "../Shared/Navbar/NavBar";
+import swal from "sweetalert";
 
 const Login = () => {
+  const { signIn } = useContext(AuthContext);
   const handleLogin = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
@@ -8,9 +14,21 @@ const Login = () => {
     const password = form.get("password");
     console.log(email, password);
     console.log(form);
+    signIn(email, password)
+      .then((result) => {
+        return swal("Hello there", "Login successful", "success");
+        // console.log(result.user);
+      })
+      .catch((error) => {
+        console.error(error);
+        swal("incorrect password or email");
+      });
   };
   return (
     <div>
+      <div className="mb-10">
+        <NavBar></NavBar>
+      </div>
       <h1 className="text-4xl text-center text-[#00FFE1]">L O G I N</h1>
       <div className="hero">
         <div className="hero-content flex-col lg:flex-row-reverse">

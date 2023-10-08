@@ -2,24 +2,50 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import NavBar from "../Shared/Navbar/NavBar";
+import swal from "sweetalert";
 
 const Register = () => {
+  const [success, setSuccess] = useState("");
+  const [registerError, setRegisterError] = useState("");
   const { createUser } = useContext(AuthContext);
   const handleRegister = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
-    console.log(email, password);
-    console.log(form);
+    setRegisterError("");
+    if (password.length < 6) {
+      setRegisterError("password should be at least 6 characters or longer");
+      return;
+    } else if (!/[A-Z]/.test(password)) {
+      setRegisterError("password should have capital letters");
+      // return swal("Good job!", "You clicked the button!", "success");
+    } else if (/^[a-zA-Z0-9]*$/.test(password)) {
+      setRegisterError("password should have special character");
+      return;
+    } else {
+      swal("Good job!", "account created succesfully", "success");
+    }
+    // console.log(email, password);
+    // console.log(form);
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
+        // if (result.user) {
+        //   // setSuccess(() => {
+        //   //   swal("Good job!", "You clicked the button!", "success");
+        //   // });
+
+        // }
       })
       .catch((error) => console.error(error));
   };
   return (
     <div>
+      <div className="mb-10">
+        <NavBar></NavBar>
+      </div>
       <h1 className="text-4xl text-center text-[#00FFE1]">R E G I S T E R</h1>
       <div className="hero">
         <div className="hero-content flex-col lg:flex-row-reverse">
@@ -70,6 +96,8 @@ const Register = () => {
                 login
               </Link>
             </p>
+            {registerError && <p className="text-red-600">{registerError}</p>}
+            {/* {success && <p className="text-green-400">{success}</p>} */}
           </div>
         </div>
       </div>
