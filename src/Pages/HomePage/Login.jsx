@@ -1,12 +1,27 @@
 /* eslint-disable no-unused-vars */
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import NavBar from "../Shared/Navbar/NavBar";
 import swal from "sweetalert";
-
+import { FaGoogle } from "react-icons/fa";
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
+  const [mainUser, setMainUser] = useState(null);
+  const auth = getAuth();
+  const provider = new GoogleAuthProvider();
+  const handleGoogleSignIn = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const user = result.user;
+        console.log(result.user);
+        setMainUser(user);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+  const { signIn, loading } = useContext(AuthContext);
   const handleLogin = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
@@ -24,6 +39,17 @@ const Login = () => {
         swal("incorrect password or email");
       });
   };
+  // const handleGoogleSignIn = () => {
+  //   googleIn()
+  //     .then((result) => {
+  //       const user = result.user;
+  //       console.log(result.user);
+  //       setMainUser(user);
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //     });
+  // };
   return (
     <div>
       <div className="mb-10">
@@ -75,6 +101,17 @@ const Login = () => {
             </p>
           </div>
         </div>
+      </div>
+      <div className="flex items-center justify-center">
+        <button
+          onClick={handleGoogleSignIn}
+          className="btn border-none bg-[#00FFE1] rounded-none items-center"
+        >
+          <FaGoogle className="text-2xl"></FaGoogle>
+          Google
+        </button>
+        {/* <p>{mainUser.displayName}</p>
+        <img src={mainUser.photoURL} alt="" /> */}
       </div>
     </div>
   );

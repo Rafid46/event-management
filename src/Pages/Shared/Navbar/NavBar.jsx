@@ -1,13 +1,17 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../Provider/AuthProvider";
-
+import { CgProfile } from "react-icons/Cg";
+import swal from "sweetalert";
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
+  console.log(user);
+  // const { photoURL } = mainUser;
   const handleSignOut = () => {
     logOut()
       .then((result) => {
-        console.log(result.user);
+        // console.log(result.user);
+        return swal("Logout successfully", "success");
       })
       .catch((error) => {
         console.error(error);
@@ -18,13 +22,15 @@ const NavBar = () => {
       <li className="text-2xl font-light text-[#00FFE1] mr-20">
         <NavLink to="/">H O M E</NavLink>
       </li>
-      <li className="text-2xl font-light  text-[#00FFE1] mr-20">
+      {/* <li className="text-2xl font-light  text-[#00FFE1] mr-20">
         <NavLink to="/convention">C O N V E N T I O N</NavLink>
-      </li>
+      </li> */}
       <li className="text-2xl font-light  text-[#00FFE1] mr-20">
         <NavLink to="/about">A B O U T</NavLink>
       </li>
-
+      <li className="text-2xl font-light  text-[#00FFE1] mr-20">
+        <NavLink to="/login">L O G I N</NavLink>
+      </li>
       {user && (
         <>
           <li className="text-2xl font-light  text-[#00FFE1] mr-20">
@@ -71,24 +77,31 @@ const NavBar = () => {
           <ul className="menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar">
-          <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+          {/* <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
             <div className="w-8 mr-2 rounded-full">
               <img src="" />
             </div>
-          </label>
+          </label> */}
           {user ? (
-            <button
-              onClick={handleSignOut}
-              className="btn rounded-none w-[130px] hover:text-[#00FFE1]"
-            >
-              L O G O U T
-            </button>
-          ) : (
-            <Link to="/login">
-              <button className="btn rounded-none w-[130px] hover:text-[#00FFE1]">
-                L o g i n
+            <div>
+              <img className="rounded-full w-[50px] mr-2" src={user.photoURL} />
+              <p className="text-2xl text-white mr-2">{user.displayName}</p>
+              <button
+                onClick={handleSignOut}
+                className="btn rounded-none w-[130px] hover:text-[#00FFE1]"
+              >
+                L O G O U T
               </button>
-            </Link>
+            </div>
+          ) : (
+            <div>
+              <CgProfile className="text-white text-5xl font-normal mr-5 items-center"></CgProfile>
+              <Link to="/login">
+                <button className="btn rounded-none w-[130px] hover:text-[#00FFE1]">
+                  L o g i n
+                </button>
+              </Link>
+            </div>
           )}
         </div>
       </div>

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const ServiceCard = ({ service }) => {
   const { id, name, description, price, image } = service;
   return (
-    <div>
+    <div className="" data-aos="zoom-out">
       <figure className="relative h-[400px] w-[900px] mx-auto mb-10">
         <img className="h-full w-full object-cover object-center" src={image} />
         <figcaption className="absolute bottom-8 left-2/4 flex w-[calc(100%-4rem)] -translate-x-2/4 justify-between  border bg-white/20 border-none bg-opacity-70 py-4 px-6 shadow-lg shadow-black/5 saturate-300 backdrop-blur-md">
