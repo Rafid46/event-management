@@ -26,7 +26,7 @@ const DetailCard = () => {
         <p className="text-white">{name}</p>
         <p className="text-white">{description}</p>
       </div> */}
-      <div className="card w-[1200px] mx-auto lg:card-side bg-base-100 shadow-xl rounded-none">
+      <div className="card w-[300px] lg:w-[1200px] mx-auto lg:card-side bg-base-100 shadow-xl rounded-none">
         <figure>
           <img className="h-fit" src={image} alt="Album" />
         </figure>

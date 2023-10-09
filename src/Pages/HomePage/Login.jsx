@@ -15,6 +15,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(result.user);
+        swal("Hello there", "Login successful", "success");
         setMainUser(user);
       })
       .catch((error) => {

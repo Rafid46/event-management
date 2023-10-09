@@ -11,11 +11,13 @@ import DetailCard from "../Pages/HomePage/DetailCard";
 import PrivateRoute from "./PrivateRoute";
 import Esports from "./Private route/Esports";
 import Purchase from "./Private route/Purchase";
+import ErrorPage from "../Pages/ErrorPage";
 
 const routes = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",

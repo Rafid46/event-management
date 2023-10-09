@@ -11,7 +11,7 @@ const NavBar = () => {
     logOut()
       .then((result) => {
         // console.log(result.user);
-        return swal("Logout successfully", "success");
+        return swal("", "Logout successfully", "success");
       })
       .catch((error) => {
         console.error(error);
@@ -37,7 +37,7 @@ const NavBar = () => {
             <NavLink to="/esports">E S P O R T S</NavLink>
           </li>
           <li className="text-2xl font-light  text-[#00FFE1] mr-20">
-            <NavLink to="/bookings">P U R C H A S E</NavLink>
+            <NavLink to="/purchase">P U R C H A S E</NavLink>
           </li>
         </>
       )}
@@ -45,7 +45,7 @@ const NavBar = () => {
   );
   return (
     <div>
-      <div className="navbar">
+      <div className="navbar mb-10">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -85,7 +85,9 @@ const NavBar = () => {
           {user ? (
             <div>
               <img className="rounded-full w-[50px] mr-2" src={user.photoURL} />
-              <p className="text-2xl text-white mr-2">{user.displayName}</p>
+              <p className="text-2xl font-thin text-white mr-2">
+                {user.displayName}
+              </p>
               <button
                 onClick={handleSignOut}
                 className="btn rounded-none w-[130px] hover:text-[#00FFE1]"

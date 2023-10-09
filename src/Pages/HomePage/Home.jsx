@@ -10,21 +10,21 @@ import pic4 from "../../assets/pic4.png";
 import pic5 from "../../assets/pic5.png";
 import pic6 from "../../assets/pic6.png";
 import pic7 from "../../assets/pic7.png";
-import pic8 from "../../assets/blue-smooth.jpg";
+import pic8 from "../../assets/abstract.jpg";
 const Home = () => {
   const services = useLoaderData();
   console.log(services);
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto mt-10 mb-20">
       <NavBar></NavBar>
       <div>
-        <img className="" src={banner3} />
+        <img className="w-full" src={banner3} />
       </div>
       <hr className="mt-20 border-[#00FFE1]" />
       {/* extra section 1 */}
       <section className="mt-20 mb-20">
-        <div className="flex items-center justify-around">
-          <div className="w-[700px]">
+        <div className="flex flex-col lg:flex-row items-center justify-around">
+          <div className="w-[300px] lg:w-[700px] flex-wrap">
             <h1 className="text-3xl bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text leading-relaxed">
               GameCon 10 is gearing up for gaming fun and fellowship Labor Day
               weekend, September 2024. We appreciate all your support of our
@@ -44,10 +44,10 @@ const Home = () => {
       <hr className="mb-20 border-[#00FFE1]" />
       {/* service section */}
       <section
-        className="border-2 border-[#00FFE1] mb-20"
+        className="border-2 border-[#00FFE1] mb-20 lg:mb-20"
         style={{ backgroundImage: `url(${pic8})` }}
       >
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 w-[600px] mx-auto py-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 w-[150px] lg:w-[600px]  mx-auto py-20 items-center">
           <div className="">
             <img src={pic1} />
           </div>
@@ -75,9 +75,11 @@ const Home = () => {
         <h1 className="text-4xl text-[#00FFE1] text-center mb-5">
           <span className="mr-10">O U R</span>S E R V I C E S
         </h1>
-        {services.map((service) => (
-          <ServiceCard key={service.id} service={service}></ServiceCard>
-        ))}
+        <div className="grid grid-cols-1 space-y-10">
+          {services.map((service) => (
+            <ServiceCard key={service.id} service={service}></ServiceCard>
+          ))}
+        </div>
       </section>
       {/* extra section 2 */}
       <footer className="footer pt-10 text-white text-center items-center justify-evenly">
@@ -107,7 +109,7 @@ const Home = () => {
           <p></p>
         </aside>
         <nav className="mt-5">
-          <div className="grid grid-flow-col gap-4">
+          <div className="grid grid-flow-col gap-4 mx-auto">
             <a className="mr-10">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
