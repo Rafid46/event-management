@@ -15,7 +15,7 @@ const Home = () => {
   const services = useLoaderData();
   console.log(services);
   return (
-    <div className="max-w-7xl mx-auto mt-10 mb-20">
+    <div className="max-w-7xl mx-auto mt-10 mb-2">
       <NavBar></NavBar>
       <div>
         <img className="w-full" src={banner3} />

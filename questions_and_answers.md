@@ -126,7 +126,7 @@ console.log(count);
 
 #### Answer: ?
 
-<i></i>
+<i>because it is increasing plus one by one</i>
 
 </p>
 </details>
