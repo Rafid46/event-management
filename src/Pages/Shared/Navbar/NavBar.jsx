@@ -23,7 +23,7 @@ const NavBar = () => {
         <NavLink
           to="/"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-white" : ""
+            isPending ? "pending" : isActive ? "text-gray-300" : ""
           }
         >
           H O M E
@@ -36,7 +36,7 @@ const NavBar = () => {
         <NavLink
           to="/about"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-white" : ""
+            isPending ? "pending" : isActive ? "text-gray-300" : ""
           }
         >
           A B O U T
@@ -46,7 +46,7 @@ const NavBar = () => {
         <NavLink
           to="/login"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-white" : ""
+            isPending ? "pending" : isActive ? "text-gray-300" : ""
           }
         >
           L O G I N
@@ -58,7 +58,7 @@ const NavBar = () => {
             <NavLink
               to="/esports"
               className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "text-white" : ""
+                isPending ? "pending" : isActive ? "text-gray-300" : ""
               }
             >
               E S P O R T S
@@ -68,7 +68,7 @@ const NavBar = () => {
             <NavLink
               to="/purchase"
               className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "text-white" : ""
+                isPending ? "pending" : isActive ? "text-gray-300" : ""
               }
             >
               P U R C H A S E

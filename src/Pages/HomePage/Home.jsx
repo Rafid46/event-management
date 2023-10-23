@@ -71,8 +71,8 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section>
-        <h1 className="text-4xl text-[#00FFE1] text-center mb-5">
+      <section className="">
+        <h1 className="text-4xl text-[#00FFE1] text-center mb-20 lg:mb-5">
           <span className="mr-10">O U R</span>S E R V I C E S
         </h1>
         <div className="grid grid-cols-1 space-y-10">
@@ -104,7 +104,7 @@ const Home = () => {
           <a className="link link-hover">Cookie policy</a>
         </nav>
       </footer>
-      <footer className="footer">
+      <footer className="footer flex justify-center">
         <aside className="items-center grid-flow-col">
           <p></p>
         </aside>
