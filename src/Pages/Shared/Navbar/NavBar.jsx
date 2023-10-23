@@ -119,7 +119,7 @@ const NavBar = () => {
           </label> */}
           {user ? (
             <div>
-              <img className="rounded-full w-[50px] mr-2" src={user.photoURL} />
+              <img className="rounded-full w-[40px] h-[40px]  mr-2" src={user.photoURL} />
               <p className="text-2xl font-thin text-white mr-2">
                 {user.displayName}
               </p>

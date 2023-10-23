@@ -8,12 +8,16 @@ import swal from "sweetalert";
 const Register = () => {
   const [success, setSuccess] = useState("");
   const [registerError, setRegisterError] = useState("");
-  const { createUser } = useContext(AuthContext);
+  const { createUser,updateUser } = useContext(AuthContext);
   const handleRegister = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
+    const photo = form.get("photo");
+    const name = form.get("name");
+    
+
     setRegisterError("");
     if (password.length < 6) {
       setRegisterError("password should be at least 6 characters or longer");
@@ -31,13 +35,8 @@ const Register = () => {
     // console.log(form);
     createUser(email, password)
       .then((result) => {
-        console.log(result.user);
-        // if (result.user) {
-        //   // setSuccess(() => {
-        //   //   swal("Good job!", "You clicked the button!", "success");
-        //   // });
-
-        // }
+        
+      updateUser(name,photo).then(()=>{})
       })
       .catch((error) => console.error(error));
   };
@@ -51,6 +50,30 @@ const Register = () => {
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="card flex-shrink-0 w-[800px] max-w-sm shadow-2xl">
             <form onSubmit={handleRegister} className="card-body">
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text text-white">Name</span>
+                </label>
+                <input
+                  name="name"
+                  type="text"
+                  placeholder="email"
+                  className="input rounded-none"
+                  required
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text text-white">Photo</span>
+                </label>
+                <input
+                  name="photo"
+                  type="text"
+                  placeholder="email"
+                  className="input rounded-none"
+                  required
+                />
+              </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text text-white">Email</span>
