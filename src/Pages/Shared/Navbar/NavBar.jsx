@@ -20,24 +20,59 @@ const NavBar = () => {
   const links = (
     <>
       <li className="text-2xl font-light text-[#00FFE1] mr-20">
-        <NavLink to="/">H O M E</NavLink>
+        <NavLink
+          to="/"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "text-white" : ""
+          }
+        >
+          H O M E
+        </NavLink>
       </li>
       {/* <li className="text-2xl font-light  text-[#00FFE1] mr-20">
         <NavLink to="/convention">C O N V E N T I O N</NavLink>
       </li> */}
       <li className="text-2xl font-light  text-[#00FFE1] mr-20">
-        <NavLink to="/about">A B O U T</NavLink>
+        <NavLink
+          to="/about"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "text-white" : ""
+          }
+        >
+          A B O U T
+        </NavLink>
       </li>
       <li className="text-2xl font-light  text-[#00FFE1] mr-20">
-        <NavLink to="/login">L O G I N</NavLink>
+        <NavLink
+          to="/login"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "text-white" : ""
+          }
+        >
+          L O G I N
+        </NavLink>
       </li>
       {user && (
         <>
           <li className="text-2xl font-light  text-[#00FFE1] mr-20">
-            <NavLink to="/esports">E S P O R T S</NavLink>
+            <NavLink
+              to="/esports"
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "text-white" : ""
+              }
+            >
+              E S P O R T S
+            </NavLink>
           </li>
           <li className="text-2xl font-light  text-[#00FFE1] mr-20">
-            <NavLink to="/purchase">P U R C H A S E</NavLink>
+            <NavLink
+              to="/purchase"
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "text-white" : ""
+              }
+            >
+              P U R C H A S E
+            </NavLink>
           </li>
         </>
       )}
