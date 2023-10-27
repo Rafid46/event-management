@@ -75,7 +75,7 @@ const Home = () => {
         <h1 className="text-4xl text-[#00FFE1] text-center mb-20 lg:mb-5">
           <span className="mr-10">O U R</span>S E R V I C E S
         </h1>
-        <div className="grid grid-cols-1 space-y-10">
+        <div className="grid grid-cols-1 space-y-20 lg:space-y-10">
           {services.map((service) => (
             <ServiceCard key={service.id} service={service}></ServiceCard>
           ))}

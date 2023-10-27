@@ -8,7 +8,7 @@ import swal from "sweetalert";
 const Register = () => {
   const [success, setSuccess] = useState("");
   const [registerError, setRegisterError] = useState("");
-  const { createUser,updateUser } = useContext(AuthContext);
+  const { createUser, updateUser } = useContext(AuthContext);
   const handleRegister = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
@@ -16,7 +16,6 @@ const Register = () => {
     const password = form.get("password");
     const photo = form.get("photo");
     const name = form.get("name");
-    
 
     setRegisterError("");
     if (password.length < 6) {
@@ -35,8 +34,7 @@ const Register = () => {
     // console.log(form);
     createUser(email, password)
       .then((result) => {
-        
-      updateUser(name,photo).then(()=>{})
+        updateUser(name, photo).then(() => {});
       })
       .catch((error) => console.error(error));
   };
@@ -69,7 +67,7 @@ const Register = () => {
                 <input
                   name="photo"
                   type="text"
-                  placeholder="email"
+                  placeholder="photo"
                   className="input rounded-none"
                   required
                 />

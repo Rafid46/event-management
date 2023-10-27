@@ -132,7 +132,7 @@ const NavBar = () => {
             </div>
           ) : (
             <div>
-              <CgProfile className="text-white text-5xl font-normal mr-5 items-center"></CgProfile>
+              <CgProfile className="text-white text-5xl font-bold mr-5 items-center"></CgProfile>
               <Link to="/login">
                 <button className="btn rounded-none w-[130px] hover:text-[#00FFE1]">
                   L o g i n
