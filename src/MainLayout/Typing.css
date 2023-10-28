@@ -1,0 +1,50 @@
+:root {
+  --steps: 16;
+  /* --background: transparent; */
+}
+
+.typing {
+  /* Text style */
+  font-family: "Inconsolata", Consolas, monospace;
+  font-size: 6vw;
+  color: #00ffe1;
+
+  /* Core styles */
+  position: relative;
+
+  &::after {
+    content: "\2BC8";
+    position: absolute;
+    right: 0;
+    width: 100%;
+    color: white;
+    background: rgb(0, 0, 0);
+    animation: typing 4s steps(var(--steps)) infinite; /* Use infinite to make it repeat */
+  }
+}
+
+/* Animation */
+@keyframes typing {
+  to {
+    width: 0;
+  }
+}
+
+/* @keyframes caret {
+  50% {
+    color: transparent;
+  }
+} */
+.type {
+  color: transparent;
+  -webkit-text-stroke: 1px #fff;
+  background: url("../assets/back.png");
+  -webkit-background-clip: text;
+  background-position: 0 0;
+  animation: back 20s linear infinite;
+}
+@keyframes back {
+  100% {
+    background-position: 2500px 0;
+  }
+}

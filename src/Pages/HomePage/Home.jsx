@@ -1,6 +1,5 @@
 import NavBar from "../Shared/Navbar/NavBar";
 import banner2 from "../../assets/game2.jpg";
-import banner3 from "../../assets/game4.jpg";
 import { useLoaderData } from "react-router-dom";
 import ServiceCard from "./ServiceCard";
 import pic1 from "../../assets/pic1.png";
@@ -11,15 +10,25 @@ import pic5 from "../../assets/pic5.png";
 import pic6 from "../../assets/pic6.png";
 import pic7 from "../../assets/pic7.png";
 import pic8 from "../../assets/abstract.jpg";
+import navBg from "../../assets/5295524.png";
+import Banner from "./Banner";
 const Home = () => {
   const services = useLoaderData();
   console.log(services);
   return (
-    <div className="max-w-7xl mx-auto mt-10 mb-2">
-      <NavBar></NavBar>
-      <div>
-        <img className="w-full" src={banner3} />
+    <div className="mb-2">
+      <div
+        style={{ backgroundImage: `url(${navBg})` }}
+        className="bg-cover bg-fixed bg-center h-[800px] max-w-10xl mx-auto"
+      >
+        <NavBar></NavBar>
+        <div className="mt-[150px]">
+          <Banner></Banner>
+        </div>
       </div>
+      {/* <div>
+        <img className="w-full" src={banner3} />
+      </div> */}
       <hr className="mt-20 border-[#00FFE1]" />
       {/* extra section 1 */}
       <section className="mt-20 mb-20">

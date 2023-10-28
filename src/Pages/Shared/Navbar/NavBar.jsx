@@ -19,63 +19,62 @@ const NavBar = () => {
   };
   const links = (
     <>
-      <li className="text-2xl font-light text-[#00FFE1] mr-20">
-        <NavLink
-          to="/"
-          className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-gray-300" : ""
-          }
-        >
-          H O M E
-        </NavLink>
-      </li>
-      {/* <li className="text-2xl font-light  text-[#00FFE1] mr-20">
-        <NavLink to="/convention">C O N V E N T I O N</NavLink>
-      </li> */}
-      <li className="text-2xl font-light  text-[#00FFE1] mr-20">
-        <NavLink
-          to="/about"
-          className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-gray-300" : ""
-          }
-        >
-          A B O U T
-        </NavLink>
-      </li>
-      <li className="text-2xl font-light  text-[#00FFE1] mr-20">
-        <NavLink
-          to="/login"
-          className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-gray-300" : ""
-          }
-        >
-          L O G I N
-        </NavLink>
-      </li>
-      {user && (
-        <>
-          <li className="text-2xl font-light  text-[#00FFE1] mr-20">
-            <NavLink
-              to="/esports"
-              className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "text-gray-300" : ""
-              }
-            >
-              E S P O R T S
-            </NavLink>
-          </li>
-          <li className="text-2xl font-light  text-[#00FFE1] mr-20">
-            <NavLink
-              to="/purchase"
-              className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "text-gray-300" : ""
-              }
-            >
-              P U R C H A S E
-            </NavLink>
-          </li>
-        </>
-      )}
+      <nav className="flex items-center justify-between mt-10">
+        <li className="text-2xl font-light text-[#00FFE1] mr-20">
+          <NavLink
+            to="/"
+            className={({ isActive, isPending }) =>
+              isPending ? "pending" : isActive ? "text-gray-300" : ""
+            }
+          >
+            H O M E
+          </NavLink>
+        </li>
+        <li className="text-2xl font-light  text-[#00FFE1] mr-20">
+          <NavLink
+            to="/about"
+            className={({ isActive, isPending }) =>
+              isPending ? "pending" : isActive ? "text-gray-300" : ""
+            }
+          >
+            A B O U T
+          </NavLink>
+        </li>
+        <li className="text-2xl font-light  text-[#00FFE1] mr-20">
+          <NavLink
+            to="/login"
+            className={({ isActive, isPending }) =>
+              isPending ? "pending" : isActive ? "text-gray-300" : ""
+            }
+          >
+            L O G I N
+          </NavLink>
+        </li>
+        {user && (
+          <>
+            <li className="text-2xl font-light  text-[#00FFE1] mr-20">
+              <NavLink
+                to="/esports"
+                className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "text-gray-300" : ""
+                }
+              >
+                E S P O R T S
+              </NavLink>
+            </li>
+            <li className="text-2xl font-light  text-[#00FFE1] mr-20">
+              <NavLink
+                to="/purchase"
+                className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "text-gray-300" : ""
+                }
+              >
+                P U R C H A S E
+              </NavLink>
+            </li>
+          </>
+        )}
+      </nav>
     </>
   );
   return (
@@ -119,7 +118,10 @@ const NavBar = () => {
           </label> */}
           {user ? (
             <div>
-              <img className="rounded-full w-[40px] h-[40px]  mr-2" src={user.photoURL} />
+              <img
+                className="rounded-full w-[40px] h-[40px]  mr-2"
+                src={user.photoURL}
+              />
               <p className="text-2xl font-thin text-white mr-2">
                 {user.displayName}
               </p>
@@ -131,7 +133,7 @@ const NavBar = () => {
               </button>
             </div>
           ) : (
-            <div>
+            <div className="mt-10">
               <CgProfile className="text-white text-5xl font-bold mr-5 items-center"></CgProfile>
               <Link to="/login">
                 <button className="btn rounded-none w-[130px] hover:text-[#00FFE1]">
