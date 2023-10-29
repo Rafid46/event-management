@@ -19,17 +19,17 @@ const Home = () => {
     <div className="mb-2">
       <div
         style={{ backgroundImage: `url(${navBg})` }}
-        className="bg-cover bg-fixed bg-center h-[800px] max-w-10xl mx-auto"
+        className="bg-cover bg-fixed bg-center h-[1000px] max-w-10xl mx-auto"
       >
         <NavBar></NavBar>
-        <div className="mt-[150px]">
+        <div className="mt-[200px]">
           <Banner></Banner>
         </div>
       </div>
       {/* <div>
         <img className="w-full" src={banner3} />
       </div> */}
-      <hr className="mt-20 border-[#00FFE1]" />
+      <hr className="max-w-7xl mx-auto mt-20 border-[#00FFE1]" />
       {/* extra section 1 */}
       <section className="mt-20 mb-20">
         <div className="flex flex-col lg:flex-row items-center justify-around">
@@ -50,7 +50,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <hr className="mb-20 border-[#00FFE1]" />
+      <hr className="max-w-7xl mx-auto mb-20 border-[#00FFE1]" />
       {/* service section */}
       <section
         className="border-2 border-[#00FFE1] mb-20 lg:mb-20"

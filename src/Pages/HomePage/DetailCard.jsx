@@ -16,7 +16,7 @@ const DetailCard = () => {
   }, [id, mainDetailCard]);
   return (
     <div>
-      <div className="mb-10 mt-10">
+      <div className="">
         <NavBar></NavBar>
       </div>
       {/* <div className="text-white text-3xl">

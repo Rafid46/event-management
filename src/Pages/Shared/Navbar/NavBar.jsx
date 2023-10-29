@@ -119,15 +119,15 @@ const NavBar = () => {
           {user ? (
             <div>
               <img
-                className="rounded-full w-[40px] h-[40px]  mr-2"
+                className="rounded-full w-[40px] h-[40px]  mt-10"
                 src={user.photoURL}
               />
-              <p className="text-2xl font-thin text-white mr-2">
+              <p className="text-2xl font-thin text-white mt-10  mx-5">
                 {user.displayName}
               </p>
               <button
                 onClick={handleSignOut}
-                className="btn rounded-none w-[130px] hover:text-[#00FFE1]"
+                className="mt-10 btn rounded-none w-[130px] hover:text-[#00FFE1]"
               >
                 L O G O U T
               </button>
@@ -136,8 +136,8 @@ const NavBar = () => {
             <div className="mt-10">
               <CgProfile className="text-white text-5xl font-bold mr-5 items-center"></CgProfile>
               <Link to="/login">
-                <button className="btn rounded-none w-[130px] hover:text-[#00FFE1]">
-                  L o g i n
+                <button className="coolBeans btn bg-transparent rounded-none font-thin">
+                  L O G I N
                 </button>
               </Link>
             </div>

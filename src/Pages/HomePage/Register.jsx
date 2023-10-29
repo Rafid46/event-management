@@ -105,9 +105,7 @@ const Register = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn border-none bg-[#00FFE1] rounded-none">
-                  R E G I S T E R
-                </button>
+                <button className="coolBeans">R E G I S T E R</button>
               </div>
             </form>
             <p className="text-center text-gray-200">

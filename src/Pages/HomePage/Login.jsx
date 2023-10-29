@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import NavBar from "../Shared/Navbar/NavBar";
 import swal from "sweetalert";
@@ -8,6 +8,8 @@ import { FaGoogle } from "react-icons/fa";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 const Login = () => {
   const [mainUser, setMainUser] = useState(null);
+  const location = useLocation();
+  const navigate = useNavigate();
   const auth = getAuth();
   const provider = new GoogleAuthProvider();
   const handleGoogleSignIn = () => {
@@ -15,6 +17,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(result.user);
+        navigate(location.state ? location?.state : "/");
         swal("Hello there", "Login successful", "success");
         setMainUser(user);
       })
@@ -32,6 +35,7 @@ const Login = () => {
     console.log(form);
     signIn(email, password)
       .then((result) => {
+        navigate(location.state ? location?.state : "/");
         return swal("Hello there", "Login successful", "success");
         // console.log(result.user);
       })
@@ -88,9 +92,7 @@ const Login = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn border-none bg-[#00FFE1] rounded-none">
-                  L o g i n
-                </button>
+                <button className="coolBeans">L O G I N</button>
               </div>
             </form>
             <p className="text-center text-gray-200">
